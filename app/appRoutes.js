@@ -1,18 +1,15 @@
 feastly.config(function($stateProvider, $urlRouterProvider) {
-    
-  $urlRouterProvider.otherwise('/login');
   
   $stateProvider
     //STATES
-     .state('footer', {
+    .state('footer', {
       url: '',
       templateUrl: '/Shared/Footer/footerview.html',
     })
     .state('home', {
       url: '/home',
       templateUrl: 'Components/Homepage/homeview.html',
-      controller: 'homeViewCtrl',
-      authenticate: true
+      controller: 'homeViewCtrl'
     })
     .state('register', {
       url: '/register',
@@ -30,11 +27,10 @@ feastly.config(function($stateProvider, $urlRouterProvider) {
       controller: 'RecipeViewCtrl',
       authenticate: true
     })
-     .state('results', {
+    .state('results', {
       url: '/results',
       templateUrl: 'Components/SearchResults/resultsview.html',
       controller: 'search.ctrl',
-      // controller: 'ResultsController',
       authenticate: true
     });
 });

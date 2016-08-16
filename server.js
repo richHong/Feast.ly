@@ -14,16 +14,13 @@ var port = process.env.PORT || 4444;
 
 //middleware
 app.use(express.static(__dirname + '/app'));
-console.log("Hello")
 app.use(bodyParser.json());
 
-// %%%%%%%%%%%This Should Fix our CORS%%%%%%%%%%%%%%%%%%%%
 app.use(function(req, res, next){
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With');
     next();
 });
-// %%%%%%%%%%%%%^^^^^^^^^^^^^^^%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 //mongoose connection
 mongoose.connect('mongodb://indigozone:indigozone@ds015962.mlab.com:15962/heroku_v75xg8cs'); 
@@ -39,7 +36,6 @@ app.post('/api/register', function(req,res){
   }, function(err, user){
     res.send(user);
   });
-
 });
 
 //handles login
@@ -55,7 +51,6 @@ app.post('/api/login', function(req,res){
       res.send('failure');
     }
   });
-
 });
 
 //prints sucess when the server is running 

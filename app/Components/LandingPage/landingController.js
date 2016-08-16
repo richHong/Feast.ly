@@ -13,7 +13,6 @@ angular.module ('feastly.landing', [])
       } else {
         $scope.show = true;
       }
-
     });
     
   };
