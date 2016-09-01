@@ -11,16 +11,17 @@ angular.module ('feastly.home', [])
   //on click sends another request to get that specific recipe
 
   $scope.showRecipe = function(value){
-    thisRecipe = value
+    thisRecipe = value;
   };
   
   $scope.featured = function(){
     return $http({
-          method: 'GET',
-          url: 'http://api.yummly.com/v1/api/recipes?_app_id=85328aaa&_app_key=9b9c3f69de268c05cd19da7b5bea7a42&q=empanadas'
+        method: 'GET',
+        url: 'https://api.yummly.com/v1/api/recipes?_app_id=85328aaa&_app_key=9b9c3f69de268c05cd19da7b5bea7a42&q=empanadas'
       }).then(function(res) {
+        console.log(res.data);
         $scope.featured = res.data;
-          return res.data;
+        return res.data;
     });
   };
   //invokes featured() on load
