@@ -7,7 +7,7 @@
   <div ng-repeat="recipe in list" class="col-md-4">
     <a  ui-sref="recipe" ng-click="showRecipe(recipe.id)"><img class="center" ng-src={{recipe.imageUrlsBySize["90"]}} title="rating: {{recipe.rating}}"></a>
     <h3>
-      <a class"recipeName" href="#">{{recipe.recipeName}}</a>
+      <a class"recipeName" ui-sref="recipe" ng-click="showRecipe(recipe.id)">{{recipe.recipeName}}</a>
     </h3>
   </div>
 </div>
